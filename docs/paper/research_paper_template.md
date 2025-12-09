@@ -431,10 +431,10 @@ Source code available at: [GitHub repository URL]
 ---
 
 **Author Information:**
-- **Name:** [Your Name]
-- **Institution:** [Your University]
-- **Email:** [Your Email]
-- **Date:** November 2025
+- **Name:** [Paramjit Singh]
+- **Institution:** [Lovely Professional University]
+- **Email:** [parambrar862@gmail.com]
+- **Date:** December 2025
 
 **Acknowledgments:**
 We thank the USC Institute for Creative Technologies for providing the DAIC-WOZ dataset.

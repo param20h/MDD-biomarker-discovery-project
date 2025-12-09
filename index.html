@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Biomarker Discovery | ML Research Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-brain"></i>
+                <span>Depression Biomarker Discovery</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#dataset">Dataset</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <i class="fas fa-microscope"></i>
+                Unsupervised Discovery of Depression Biomarkers
+            </h1>
+            <p class="hero-subtitle">Using multimodal machine learning to identify hidden subtypes of Major Depressive Disorder</p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Subtypes Discovered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0.0112</div>
+                    <div class="stat-label">p-value (Significant!)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">33</div>
+                    <div class="stat-label">Clinical Interviews</div>
+                    <small style="opacity: 0.8; font-size: 0.9rem;">(14 depressed, 19 healthy)</small>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">396</div>
+                    <div class="stat-label">Features Extracted</div>
+                    <small style="opacity: 0.8; font-size: 0.9rem;">(100 text + 296 acoustic)</small>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="https://github.com/param20h/MDD-biomarker-discovery-project" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="docs/paper/research_paper_template.md" class="btn btn-secondary">
+                    <i class="fas fa-file-alt"></i> Read Paper
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-lightbulb"></i>
+                Project Overview
+            </h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>The Problem</h3>
+                    <p>Depression affects 280 million people worldwide, yet diagnosis remains subjective, relying on clinical interviews and questionnaires. Traditional methods can't detect hidden subtypes or objective biomarkers.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>The Solution</h3>
+                    <p>Apply unsupervised machine learning to discover hidden depression subtypes from multimodal clinical data: speech acoustics, linguistic patterns, and behavioral features.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>The Impact</h3>
+                    <p>Enable objective, data-driven depression diagnosis. Move from subjective assessment to personalized treatment based on discovered subtypes and biomarker patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Results Section -->
+    <section id="results" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-chart-line"></i>
+                Key Results
+            </h2>
+            
+            <!-- Statistical Validation -->
+            <div class="results-box">
+                <h3><i class="fas fa-check-circle"></i> Statistical Validation</h3>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-label">Chi-Square (χ²)</div>
+                        <div class="result-value">6.44</div>
+                    </div>
+                    <div class="result-item highlight">
+                        <div class="result-label">p-value</div>
+                        <div class="result-value">0.0112</div>
+                        <div class="result-badge">Significant! (p &lt; 0.05)</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Degrees of Freedom</div>
+                        <div class="result-value">1</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clustering Performance -->
+            <div class="results-box">
+                <h3><i class="fas fa-project-diagram"></i> Clustering Performance</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Optimal k</div>
+                        <div class="metric-value">2</div>
+                        <div class="metric-desc">Two distinct subtypes</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Silhouette Score</div>
+                        <div class="metric-value">0.168</div>
+                        <div class="metric-desc">Positive separation</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Davies-Bouldin</div>
+                        <div class="metric-value">1.871</div>
+                        <div class="metric-desc">Moderate compactness</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Calinski-Harabasz</div>
+                        <div class="metric-value">8.3</div>
+                        <div class="metric-desc">Moderate density</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Findings -->
+            <div class="findings-box">
+                <h3><i class="fas fa-star"></i> Key Findings</h3>
+                <ul class="findings-list">
+                    <li><i class="fas fa-check"></i> 2 distinct depression subtypes identified through unsupervised learning</li>
+                    <li><i class="fas fa-check"></i> Statistically significant correlation with PHQ-8 clinical labels</li>
+                    <li><i class="fas fa-check"></i> Multimodal features (text + acoustic) enable subtype discovery</li>
+                    <li><i class="fas fa-check"></i> 95% variance captured with 93% dimensionality reduction</li>
+                    <li><i class="fas fa-check"></i> Gold standard validation against DAIC-WOZ benchmark dataset</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-cogs"></i>
+                Methodology
+            </h2>
+            
+            <!-- Pipeline Visualization -->
+            <div class="pipeline">
+                <div class="pipeline-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4><i class="fas fa-database"></i> Data Collection</h4>
+                        <p>DAIC-WOZ Depression Database</p>
+                        <span class="badge">33 interviews</span>
+                    </div>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4><i class="fas fa-search"></i> Feature Extraction</h4>
+                        <p>TF-IDF (100) + COVAREP (296)</p>
+                        <span class="badge">396 features</span>
+                    </div>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4><i class="fas fa-compress"></i> Dimensionality Reduction</h4>
+                        <p>PCA (95% variance)</p>
+                        <span class="badge">27 components</span>
+                    </div>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4><i class="fas fa-project-diagram"></i> Clustering</h4>
+                        <p>K-Means Algorithm</p>
+                        <span class="badge">k=2</span>
+                    </div>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4><i class="fas fa-check-double"></i> Validation</h4>
+                        <p>Chi-square test</p>
+                        <span class="badge badge-success">p=0.0112</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Details -->
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Text Features (100)</h3>
+                    <ul>
+                        <li>TF-IDF Vectorization</li>
+                        <li>Unigrams + Bigrams</li>
+                        <li>min_df=2, max_df=0.8</li>
+                        <li>Participant responses only</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Acoustic Features (296)</h3>
+                    <ul>
+                        <li>COVAREP 74 features</li>
+                        <li>F0, NAQ, QOQ, H1H2, PSP</li>
+                        <li>4 statistics per feature</li>
+                        <li>Mean, Std, Min, Max</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Technologies Used -->
+            <div class="tech-stack">
+                <h3><i class="fas fa-tools"></i> Technologies Used</h3>
+                <div class="tech-grid">
+                    <div class="tech-badge">
+                        <i class="fab fa-python"></i>
+                        Python
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-chart-bar"></i>
+                        Scikit-learn
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-table"></i>
+                        Pandas
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-square-root-alt"></i>
+                        NumPy
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-chart-line"></i>
+                        Matplotlib
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-fire"></i>
+                        Seaborn
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-calculator"></i>
+                        SciPy
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-book"></i>
+                        Jupyter
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dataset Section -->
+    <section id="dataset" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-database"></i>
+                DAIC-WOZ Dataset
+            </h2>
+            
+            <div class="dataset-info">
+                <div class="dataset-header">
+                    <h3>Distress Analysis Interview Corpus - Wizard of Oz</h3>
+                    <p class="dataset-subtitle">Gold standard clinical depression database from USC Institute for Creative Technologies (AVEC 2017)</p>
+                </div>
+
+                <div class="dataset-stats">
+                    <div class="dataset-stat">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-num">189</div>
+                            <div class="stat-text">Total Interviews</div>
+                        </div>
+                    </div>
+                    <div class="dataset-stat">
+                        <div class="stat-icon"><i class="fas fa-chart-pie"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-num">107 / 82</div>
+                            <div class="stat-text">Training / Test</div>
+                        </div>
+                    </div>
+                    <div class="dataset-stat">
+                        <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-num">33</div>
+                            <div class="stat-text">Sessions Analyzed</div>
+                        </div>
+                    </div>
+                    <div class="dataset-stat">
+                        <div class="stat-icon"><i class="fas fa-heartbeat"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-num">14 / 19</div>
+                            <div class="stat-text">Depressed / Healthy</div>
+                        </div>
+                    </div>
+                    <div class="dataset-stat">
+                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-num">8.4 ± 5.3</div>
+                            <div class="stat-text">Mean PHQ-8 Score</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dataset-modalities">
+                    <h4><i class="fas fa-layer-group"></i> Available Modalities</h4>
+                    <div class="modalities-grid">
+                        <div class="modality-card">
+                            <i class="fas fa-file-alt"></i>
+                            <h5>Text Transcripts</h5>
+                            <p>Full interview transcripts with timestamps</p>
+                        </div>
+                        <div class="modality-card">
+                            <i class="fas fa-microphone-alt"></i>
+                            <h5>Audio Features</h5>
+                            <p>COVAREP acoustic features (74 dimensions)</p>
+                        </div>
+                        <div class="modality-card">
+                            <i class="fas fa-video"></i>
+                            <h5>Video/Facial</h5>
+                            <p>Facial Action Units (not used in this study)</p>
+                        </div>
+                        <div class="modality-card">
+                            <i class="fas fa-clipboard-check"></i>
+                            <h5>Clinical Labels</h5>
+                            <p>PHQ-8 depression severity scores (0-24)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visualizations Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-chart-area"></i>
+                Visualizations & Analysis
+            </h2>
+            
+            <div class="viz-grid">
+                <div class="viz-card">
+                    <div class="viz-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>PCA Variance Analysis</h4>
+                    </div>
+                    <div class="viz-image">
+                        <img src="images/pca_variance.png" alt="PCA Variance Plot" style="width: 100%; height: auto;">
+                        <p class="viz-caption">27 components retain 95.4% of variance (396 → 27 dimensions)</p>
+                    </div>
+                </div>
+                <div class="viz-card">
+                    <div class="viz-header">
+                        <i class="fas fa-project-diagram"></i>
+                        <h4>t-SNE by Clinical Labels</h4>
+                    </div>
+                    <div class="viz-image">
+                        <img src="images/tsne_true_labels.png" alt="t-SNE True Labels" style="width: 100%; height: auto;">
+                        <p class="viz-caption">Green: Healthy (PHQ8<10), Red: Depressed (PHQ8≥10)</p>
+                    </div>
+                </div>
+                <div class="viz-card">
+                    <div class="viz-header">
+                        <i class="fas fa-project-diagram"></i>
+                        <h4>t-SNE Discovered Clusters</h4>
+                    </div>
+                    <div class="viz-image">
+                        <img src="images/tsne_clusters.png" alt="t-SNE Clusters" style="width: 100%; height: auto;">
+                        <p class="viz-caption">Unsupervised K-Means clustering (k=2)</p>
+                    </div>
+                </div>
+                <div class="viz-card">
+                    <div class="viz-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <h4>Cluster vs Depression Status</h4>
+                    </div>
+                    <div class="viz-image">
+                        <img src="images/cluster_heatmap.png" alt="Cluster Heatmap" style="width: 100%; height: auto;">
+                        <p class="viz-caption">χ² = 6.44, p = 0.0112 (significant correlation)</p>
+                    </div>
+                </div>
+                <div class="viz-card">
+                    <div class="viz-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <h4>Clustering Metrics</h4>
+                    </div>
+                    <div class="viz-image">
+                        <img src="images/clustering_metrics.png" alt="Clustering Metrics" style="width: 100%; height: auto;">
+                        <p class="viz-caption">Elbow method and silhouette score optimization (k=2 optimal)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notebook-link">
+                <i class="fas fa-code"></i>
+                <p>View complete analysis and visualizations in the <a href="notebooks/03_DAICWOZ_unsupervised.ipynb">Jupyter Notebook</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Questions Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-question"></i>
+                Research Questions & Answers
+            </h2>
+            
+            <div class="qa-grid">
+                <div class="qa-card">
+                    <div class="question">
+                        <i class="fas fa-question-circle"></i>
+                        Can unsupervised algorithms detect meaningful latent subtypes of MDD patients?
+                    </div>
+                    <div class="answer">
+                        <i class="fas fa-check-circle"></i>
+                        <strong>YES.</strong> K-Means clustering identified 2 distinct subtypes with statistically significant correlation to clinical labels (p=0.0112).
+                    </div>
+                </div>
+                <div class="qa-card">
+                    <div class="question">
+                        <i class="fas fa-question-circle"></i>
+                        What multimodal biomarkers define these subtypes?
+                    </div>
+                    <div class="answer">
+                        <i class="fas fa-check-circle"></i>
+                        <strong>Combined text (TF-IDF linguistic patterns) and acoustic features (COVAREP voice analysis) with 396 dimensions reduced to 27 via PCA.</strong>
+                    </div>
+                </div>
+                <div class="qa-card">
+                    <div class="question">
+                        <i class="fas fa-question-circle"></i>
+                        Do discovered clusters correlate with PHQ-8 depression severity?
+                    </div>
+                    <div class="answer">
+                        <i class="fas fa-check-circle"></i>
+                        <strong>YES.</strong> Chi-square test confirms significant association (χ²=6.44, p=0.0112 < 0.05).
+                    </div>
+                </div>
+                <div class="qa-card">
+                    <div class="question">
+                        <i class="fas fa-question-circle"></i>
+                        Can dimensionality reduction reveal interpretable patterns?
+                    </div>
+                    <div class="answer">
+                        <i class="fas fa-check-circle"></i>
+                        <strong>YES.</strong> PCA reduced 396 features to 27 components while retaining 95.4% variance, enabling effective clustering.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-envelope"></i>
+                Get in Touch
+            </h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Project Details</h3>
+                    <ul class="contact-links">
+                        <li>
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/param20h/MDD-biomarker-discovery-project" target="_blank">
+                                GitHub Repository
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-file-pdf"></i>
+                            <a href="docs/paper/research_paper_template.md">
+                                Research Paper
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-book"></i>
+                            <a href="notebooks/03_DAICWOZ_unsupervised.ipynb">
+                                Jupyter Notebook
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-database"></i>
+                            <a href="https://dcapswoz.ict.usc.edu/" target="_blank">
+                                DAIC-WOZ Dataset
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="acknowledgments">
+                    <h3><i class="fas fa-heart"></i> Acknowledgments</h3>
+                    <p><strong>USC Institute for Creative Technologies</strong> - DAIC-WOZ Depression Database (AVEC 2017)</p>
+                    <p><strong>COVAREP Team</strong> - Acoustic feature extraction toolkit</p>
+                    <p class="license">
+                        <i class="fas fa-balance-scale"></i>
+                        MIT License - For research and educational purposes
+                    </p>
+                </div>
+            </div>
+
+            <div class="ethics-note">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p><strong>Ethical Note:</strong> This project is for research purposes only. It is not intended to replace professional medical diagnosis or treatment. If you or someone you know is experiencing depression, please seek help from qualified mental health professionals.</p>
+                <div class="crisis-resources">
+                    <strong>Crisis Resources:</strong>
+                    <span>National Suicide Prevention Lifeline: 988</span>
+                    <span>Crisis Text Line: Text HOME to 741741</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Param20h | Machine Learning Research Project</p>
+            <p class="footer-quote">"In the silence of data, we find the voice of invisible pain."</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
