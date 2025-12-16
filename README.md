@@ -255,7 +255,10 @@ MDD-biomarker-discovery-project/
 
 ## 👥 Author
 
-**Paramjit** - Machine Learning Research Project
+**Paramjit** - Machine Learning
+**Dinesh** - Contributor
+**Jaivardhan** - Contributor 
+Research Project
 
 ---
 
